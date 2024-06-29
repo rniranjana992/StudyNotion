@@ -14,7 +14,7 @@ exports.capturePayment = async (req, res) => {
     const {courses} = req.body;
     const userId = req.user.id;
     //validation
-    console.log("here");
+    
     //valid courseID
     try{
     if(courses.length === 0) {
@@ -37,6 +37,8 @@ exports.capturePayment = async (req, res) => {
                     message:'Could not find the course',
                 });
             }
+    console.log("here");
+
     
             //user already pay for the same course
             const uid = new mongoose.Types.ObjectId(userId);

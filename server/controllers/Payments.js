@@ -49,10 +49,11 @@ exports.capturePayment = async (req, res) => {
                 });
             }
             totalAmount += course.price;
-            console.log("here after user");
+           
         }
         
         catch(error) {
+            xonsole.log("error in intialisation");
             console.error(error);
             return res.status(500).json({
                 success:false,
@@ -81,6 +82,7 @@ exports.capturePayment = async (req, res) => {
         }
         catch(error) {
             console.error(error);
+            console.log("error in options");
             return res.status(500).json({
                 success:false,
                 message:error.message,

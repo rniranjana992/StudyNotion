@@ -37,7 +37,7 @@ exports.capturePayment = async (req, res) => {
                     message:'Could not find the course',
                 });
             }
-    console.log("here");
+
 
     
             //user already pay for the same course
@@ -49,7 +49,9 @@ exports.capturePayment = async (req, res) => {
                 });
             }
             totalAmount += course.price;
+            console.log("here after user");
         }
+        
         catch(error) {
             console.error(error);
             return res.status(500).json({
